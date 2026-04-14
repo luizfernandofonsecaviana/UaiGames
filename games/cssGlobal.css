@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Plano de fundo estilizado */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  margin-bottom: 40px;
+}
+
+a.site-logo {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: inline-block;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  color: #ffcc00 !important;
+  text-shadow: 2px 2px 5px #000;
+  text-decoration: none !important;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+a.site-logo:hover {
+  background: none !important;
+  transform: translateY(-2px);
+  color: #ffcc00 !important;
+}
+
+.site-logo {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: inline-block;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  color: #ffcc00 !important;
+  text-shadow: 2px 2px 5px #000;
+  text-decoration: none !important;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.site-logo:hover {
+  background: none;
+  transform: translateY(-2px);
+  color: #ffcc00 !important;
+}
+
+header h1 {
+  font-size: 3em;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+/* Seção principal */
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+section {
+  padding-bottom: 20px;
+}
+
+/* Títulos */
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffd700;
+  text-align: center;
+  text-shadow: 0 0 5px #ffd700;
+}
+
+/* Cada curiosidade */
+article {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: scale(1.02);
+}
+
+article h3 {
+  color: #00ffff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+article img {
+  margin-top: 15px;
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.media-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.media-container img,
+.media-container video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.media-container video {
+  max-height: 400px;
+}
+
+article p {
+  margin-top: 10px;
+  color: #ddd;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #00ffff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #00ccff;
+  transform: scale(1.03);
+}
+
+/* Botão de voltar */
+a[href*="bem_vindo.html"] {
+  display: inline-block;
+  background-color: #00ffff;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a[href*="bem_vindo.html"]:hover {
+  background-color: #00ccff;
+  transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.9em;
+  color: #ccc;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Removido estilo fixo de imagem para melhorar responsividade */

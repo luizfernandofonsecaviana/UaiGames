@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | UaiGames</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="icon" href="../img/icon.png">
+</head>
+<body>
+    <div class="page-shell">
+        <div class="register-card">
+            <header class="register-header">
+                <div class="brand">
+                    <span>Uai</span>Games
+                </div>
+                <p>Crie sua conta e descubra conteúdos de jogos exclusivos.</p>
+            </header>
+
+            <form autocomplete="off">
+                <div class="field-row">
+                    <label for="txt_nome">Nome completo</label>
+                    <div class="input-box">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="txt_nome" placeholder="Digite seu nome" required>
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <label for="email">Email</label>
+                    <div class="input-box">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Digite seu email" required onchange="validarMsgEmailVazio()">
+                    </div>
+                    <small class="erro" id="erroEmail">Email é obrigatório!</small>
+                </div>
+
+                <div class="field-row">
+                    <label for="senha">Senha</label>
+                    <div class="input-box">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="senha" placeholder="Digite sua senha" required onchange="validarMsgSenhaVazia()">
+                    </div>
+                    <small class="erro" id="erroSenha">Senha é obrigatória!</small>
+                    <small class="erro" id="erroSenha6">Senha deve conter no mínimo 6 caracteres!</small>
+                </div>
+
+                <div class="field-row">
+                    <label for="confirmarmesenha">Confirmar senha</label>
+                    <div class="input-box">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmarmesenha" placeholder="Confirme sua senha" required onchange="validarSenhasIguais()">
+                    </div>
+                    <small class="erro" id="erroConfirmarSenhaIgual">Senha e confirmação devem ser iguais!</small>
+                </div>
+
+                <div class="selection-row">
+                    <div class="selection-block">
+                        <span>Sexo</span>
+                        <label><input type="radio" name="Sexo" id="feminino" value="feminino"> Feminino</label>
+                        <label><input type="radio" name="Sexo" id="masculino" value="masculino"> Masculino</label>
+                    </div>
+                    <div class="selection-block">
+                        <span>Como conheceu</span>
+                        <label><input type="checkbox" name="Item1" id="Item1" value="Amigos"> Amigos</label>
+                        <label><input type="checkbox" name="Item2" id="Item2" value="Instagram"> Instagram</label>
+                        <label><input type="checkbox" name="Item3" id="Item3" value="Facebook"> Facebook</label>
+                    </div>
+                </div>
+
+                <div class="actions-row">
+                    <button type="button" class="btn btn-primary" id="BtnCadastrar" disabled onclick="cadastrar()">Cadastrar</button>
+                    <button type="button" class="btn btn-secondary" id="BtnLogin" onclick="irLogin()">Já tenho conta</button>
+                </div>
+
+                <div class="link-row">
+                    <a href="../index.html">Voltar para a página inicial</a>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            &copy; 2025 UaiGames - Sua dose diária de curiosidades gamers!
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/cadastro.js"></script>
+</body>
+</html>

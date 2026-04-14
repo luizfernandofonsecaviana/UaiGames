@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UaiGames - Bem-vindo!</title>
+    <link rel="stylesheet" href="../pg_inicial/pg_inicial.css">
+    <link rel="icon" href="../img/icon.png">
+</head>
+<body>
+    <header class="page-header">
+        <h1>UaiGames</h1>
+        <button id="logoutButton" type="button">Sair</button>
+    </header>
+
+    <main class="main-content">
+        <section class="welcome-section">
+            <p class="welcome-text">Bem-vindo ao nosso site! Aqui você vai descobrir curiosidades incríveis sobre jogos. Explore, divirta-se e fique por dentro de tudo!</p>
+        </section>
+
+        <section class="games-section">
+            <h2>Destaques</h2>
+            <div class="games-grid">
+                <a href="../games/red_dead2.html" class="game-card">
+                    <div class="card-header">Red Dead Redemption 2</div>
+                    <p class="card-description">Descubra a imersão e o detalhe incrível deste clássico do faroeste.</p>
+                </a>
+                <a href="../games/gtav.html" class="game-card">
+                    <div class="card-header">Grand Theft Auto V</div>
+                    <p class="card-description">Explore um dos maiores sucessos da história dos videogames.</p>
+                </a>
+                <a href="../games/bully.html" class="game-card">
+                    <div class="card-header">Bully</div>
+                    <p class="card-description">Conheça a história polêmica deste jogo cult da Rockstar.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 UaiGames - Sua dose diária de curiosidades gamers!
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="../paginadelogin/PaginaLogin/js/login.js"></script>
+    <script>
+        function logout() {
+            if (!firebase || !firebase.auth) {
+                window.location.href = '../paginadelogin/PaginaLogin/login.html';
+                return;
+            }
+
+            firebase.auth().signOut()
+                .then(() => {
+                    window.location.href = '../paginadelogin/PaginaLogin/login.html';
+                })
+                .catch(() => {
+                    alert('Erro ao deslogar. Tente novamente.');
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutButton = document.getElementById('logoutButton');
+            if (logoutButton) {
+                logoutButton.addEventListener('click', logout);
+            }
+        });
+    </script>
+</body>
+</html>

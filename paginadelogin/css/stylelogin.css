@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../img/pg_login.png) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 32, 39, 0.4), rgba(44, 83, 100, 0.4));
+    z-index: 0;
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.login-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 72px 40px 45px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.back-button {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: rgba(0, 255, 255, 0.18);
+    border: 1px solid rgba(0, 255, 255, 0.32);
+    color: #e9faff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+    z-index: 1001;
+}
+
+.back-button:hover {
+    background: rgba(0, 255, 255, 0.32);
+    transform: translateY(-1px);
+}
+
+.login-header {
+    text-align: left;
+    margin-bottom: 30px;
+    padding-top: 10px;
+}
+
+.login-header h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.2rem;
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00, 2px 2px 4px #000;
+    margin-bottom: 10px;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px #ffcc00, 2px 2px 4px #000; }
+    50% { text-shadow: 0 0 20px #ffcc00, 2px 2px 4px #000; }
+}
+
+.login-header p {
+    color: #00ffff;
+    font-size: 0.9rem;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+form {
+    width: 100%;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.input-group {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    position: relative;
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    color: #777;
+    pointer-events: none;
+}
+
+.input-field .toggle-password {
+    left: auto;
+    right: 12px;
+    cursor: pointer;
+    color: #999;
+    pointer-events: all;
+    transition: color 0.2s ease;
+    font-size: 1.1em;
+}
+
+.input-field .toggle-password:hover {
+    color: #ccc;
+}
+
+.input-field .toggle-password.visible {
+    color: #f7b500;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    padding: 12px 40px 12px 38px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #aaa;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, #f7b500, #ffcc00);
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #ffcc00, #ffd700);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+a {
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+#msgRecuperacao {
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(0, 255, 50, 0.15);
+    border: 1px solid rgba(0, 255, 50, 0.3);
+    margin-top: 12px !important;
+    text-align: center;
+}
+
+#erroEmail, #erroSenha {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#msgRecuperacao {
+    font-size: 13px;
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    background: rgba(0, 255, 50, 0.15);
+    border: 1px solid rgba(0, 255, 50, 0.3);
+}
+
+#msgRecuperacao[style*="color: #ff4444"] {
+    background: rgba(255, 68, 68, 0.15);
+    border-color: rgba(255, 68, 68, 0.3);
+}
+
