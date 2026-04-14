@@ -41,28 +41,21 @@
         &copy; 2025 UaiGames - Sua dose diária de curiosidades gamers!
     </footer>
       <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-        function logout() {
-            if (!firebase || !firebase.auth) {
-                window.location.href = '../paginadelogin/PaginaLogin/login.html';
-                return;
-            }
+  <script>
+    const { createClient } = supabase;
+    const supabaseClient = createClient(
+        "https://pghogrpvloukvjxqyflm.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnaG9ncnB2bG91a3ZqeHF5ZmxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxODA0NTMsImV4cCI6MjA5MTc1NjQ1M30.rvYTFT0UrSPGKM1-Zo_fCb6OXMOZC6l-foh6dl-kh-g"
+    );
 
-            firebase.auth().signOut()
-                .then(() => {
-                    window.location.href = '../paginadelogin/PaginaLogin/login.html';
-                })
-                .catch(() => {
-                    alert('Erro ao deslogar. Tente novamente.');
-                });
+    document.getElementById('logoutButton').addEventListener('click', async function () {
+        const { error } = await supabaseClient.auth.signOut();
+        if (!error) {
+            window.location.href = '../paginadelogin/PaginaLogin/login.html';
+        } else {
+            alert('Erro ao deslogar. Tente novamente.');
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const logoutButton = document.getElementById('logoutButton');
-            if (logoutButton) {
-                logoutButton.addEventListener('click', logout);
-            }
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
